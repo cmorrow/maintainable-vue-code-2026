@@ -1,24 +1,25 @@
-import type { InjectionKey, Ref } from 'vue'
+import { inject } from "vue";
+import type { InjectionKey, Ref } from "vue";
 
-export const USER_ROLES = ['admin', 'editor', 'viewer'] as const
-export type UserRole = typeof USER_ROLES[number]
+export const USER_ROLES = ["admin", "editor", "viewer"] as const;
+export type UserRole = (typeof USER_ROLES)[number];
 
 export type CurrentUser = {
-  id: number
-  name: string
-  email: string
-  role: UserRole
-}
+  id: number;
+  name: string;
+  email: string;
+  role: UserRole;
+};
 
 export type CurrentUserContext = {
   // Descendant components can read the current user.
   // Readonly prevents injected components from directly changing currentUser.
-  currentUser: Readonly<Ref<CurrentUser>>
+  currentUser: Readonly<Ref<CurrentUser>>;
 
   // Descendant components use this action to request a role update.
   // This keeps user mutations centralized in the provider component.
-  updateCurrentUserRole: (role: UserRole) => void
-}
+  updateCurrentUserRole: (role: UserRole) => void;
+};
 
 // This Symbol is the injection key for the current user context.
 //
@@ -29,4 +30,21 @@ export type CurrentUserContext = {
 //   of the value that should be provided and injected.
 //
 // This is the preferred pattern for production Vue apps.
-export const currentUserContextKey: InjectionKey<CurrentUserContext> = Symbol('currentUserContext')
+export const currentUserContextKey: InjectionKey<CurrentUserContext> =
+  Symbol("currentUserContext");
+
+// useCurrentUser() wraps the inject call so components never need to:
+//   1. Import or know about the Symbol key
+//   2. Redeclare CurrentUser / CurrentUserContext types
+//   3. Write their own "was this provided?" error check
+//
+// All three sources of duplication and error are eliminated in one place.
+export function useCurrentUser(): CurrentUserContext {
+  const context = inject(currentUserContextKey);
+  if (!context) {
+    throw new Error(
+      "useCurrentUser() must be called inside a component tree that provides currentUserContextKey",
+    );
+  }
+  return context;
+}
