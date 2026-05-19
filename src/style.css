@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #010409;
+  --color-bg-deep: #000411;
+  --color-accent: #00e398;
+  --color-accent-rgb: 0 227 152;
+  --color-bg-dark-rgb: 10 18 32;
+  --color-accent-hover: #66f5cb;
+  --color-danger: #e74c3c;
+  --color-text: #ffffff;
+  --color-text-muted: rgba(255, 255, 255, 0.72);
+  --color-text-subtle: rgba(255, 255, 255, 0.52);
+  --color-surface: #0a1220;
+  --color-surface-elevated: #111b2e;
+  --color-border: rgba(0, 227, 152, 0.28);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-code-bg: rgba(0, 0, 0, 0.35);
+  --radius: 8px;
+  --radius-lg: 12px;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Global styles: TailwindCSS is good here */
+
+@layer base {
+  html {
+    font-size: 126.5625%;
+  }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    /* background-color: var(--color-bg-deep); */
+    font-family: var(--font-sans);
+
+    -webkit-font-smoothing: antialiased;
+    @apply leading-6 text-white bg-dark;
+  }
+
+  #app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-shell {
+    flex: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    margin-inline: auto;
+  }
+
+  .content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1;
+  }
+
+  a {
+    color: var(--color-accent);
+  }
+
+  a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: var(--color-accent);
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    margin: 2rem 0 1rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+}
