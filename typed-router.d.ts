@@ -136,13 +136,6 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/props-original': RouteRecordInfo<
-      '/props-original',
-      '/props-original',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
     '/provide-and-inject/': RouteRecordInfo<
       '/provide-and-inject/',
       '/provide-and-inject',
@@ -160,13 +153,6 @@ declare module 'vue-router/auto-routes' {
     '/provide-and-inject/string-key': RouteRecordInfo<
       '/provide-and-inject/string-key',
       '/provide-and-inject/string-key',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
-    '/provide-and-inject-old': RouteRecordInfo<
-      '/provide-and-inject-old',
-      '/provide-and-inject-old',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -373,12 +359,6 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'src/pages/props-original.vue': {
-      routes:
-        | '/props-original'
-      views:
-        | never
-    }
     'src/pages/provide-and-inject/index.vue': {
       routes:
         | '/provide-and-inject/'
@@ -394,12 +374,6 @@ declare module 'vue-router/auto-routes' {
     'src/pages/provide-and-inject/string-key.vue': {
       routes:
         | '/provide-and-inject/string-key'
-      views:
-        | never
-    }
-    'src/pages/provide-and-inject-old.vue': {
-      routes:
-        | '/provide-and-inject-old'
       views:
         | never
     }
