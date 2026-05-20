@@ -17,6 +17,7 @@ import VCardLink from "@/shared/components/VCardLink.vue";
       <VCardLink to="/styles">Styles</VCardLink>
       <VCardLink to="/stores">Pinia Stores</VCardLink>
       <VCardLink to="/typescript">TypeScript</VCardLink>
+      <VCardLink to="/v-if">v-if</VCardLink>
     </nav>
   </div>
 </template>

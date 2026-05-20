@@ -248,6 +248,27 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/v-if/': RouteRecordInfo<
+      '/v-if/',
+      '/v-if',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/v-if/large-v-if': RouteRecordInfo<
+      '/v-if/large-v-if',
+      '/v-if/large-v-if',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/v-if/split-components': RouteRecordInfo<
+      '/v-if/split-components',
+      '/v-if/split-components',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
   }
 
   /**
@@ -445,6 +466,24 @@ declare module 'vue-router/auto-routes' {
     'src/pages/typescript/type-vs-interface.vue': {
       routes:
         | '/typescript/type-vs-interface'
+      views:
+        | never
+    }
+    'src/pages/v-if/index.vue': {
+      routes:
+        | '/v-if/'
+      views:
+        | never
+    }
+    'src/pages/v-if/large-v-if.vue': {
+      routes:
+        | '/v-if/large-v-if'
+      views:
+        | never
+    }
+    'src/pages/v-if/split-components.vue': {
+      routes:
+        | '/v-if/split-components'
       views:
         | never
     }
