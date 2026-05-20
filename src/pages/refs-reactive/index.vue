@@ -7,14 +7,6 @@ const description =
 </script>
 
 <template>
-  <nav v-if="shouldShowNav">
-    <RouterLink to="/refs-reactive/reactive" class="demo-card">
-      <h2>Reactive form</h2>
-    </RouterLink>
-  </nav>
-</template>
-
-<template>
   <div class="refs-reactive-view">
     <header class="page-header">
       <VPageHeader title="Refs vs Reactive" :canToggleDescription="false">
